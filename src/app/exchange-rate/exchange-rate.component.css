@@ -1,0 +1,38 @@
+.exchange-rate-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.exchange-rate-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow:scroll;
+  max-height: 500px;
+}
+ 
+.mat-footer-row,
+.mat-header-row,
+.mat-row {
+    display: inline-flex;
+    min-width: 100%;
+}
+
+.mat-cell {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+    font-size: 12px; 
+    font-family: sans-serif;
+}

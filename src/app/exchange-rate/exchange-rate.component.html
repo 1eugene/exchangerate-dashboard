@@ -1,0 +1,26 @@
+<div class="exchange-rate-header">
+  <span>Latest Currency Rates for {{ currencyId }}</span>
+  <mat-form-field>
+    <input matInput #filter (keyup)="applyFilter(filter.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+<div class="exchange-rate-container mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="CurrencyName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Currency </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.CurrencyName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CurrencyRateValue">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Rate </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.CurrencyRateValue}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columndefs; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columndefs;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="100" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+</div>
